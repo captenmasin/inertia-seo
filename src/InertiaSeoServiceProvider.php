@@ -49,6 +49,8 @@ class InertiaSeoServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'inertia-seo');
+
         Blade::componentNamespace('Captenmasin\\InertiaSeo\\Components', 'inertia-seo');
         Blade::component('meta', Meta::class);
         // <inertia-seo::meta />
