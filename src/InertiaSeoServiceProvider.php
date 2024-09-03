@@ -5,7 +5,7 @@ namespace Captenmasin\InertiaSeo;
 use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\SEOTools;
-use Captenmasin\InertiaSeo\Components\InertiaSeo;
+use Captenmasin\InertiaSeo\Components\Meta;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Inertia\Response;
@@ -50,7 +50,7 @@ class InertiaSeoServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::componentNamespace('Captenmasin\\InertiaSeo\\Components', 'inertia-seo');
-        Blade::component('meta', InertiaSeo::class);
+        Blade::component('meta', Meta::class);
         // <inertia-seo::meta />
     }
 }
