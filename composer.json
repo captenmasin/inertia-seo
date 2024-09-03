@@ -1,10 +1,12 @@
 {
     "name": "captenmasin/inertia-seo",
-    "description": "This is my package inertia-seo",
+    "description": "Easy SEO management for Laravel/Inertia/Vue3 applications",
     "keywords": [
-        "Mason Day",
         "laravel",
-        "inertia-seo"
+        "inertia-seo",
+        "seo",
+        "inertia",
+        "vue3"
     ],
     "homepage": "https://github.com/captenmasin/inertia-seo",
     "license": "MIT",
@@ -32,14 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Captenmasin\\InertiaSeo\\": "src/",
-            "Captenmasin\\InertiaSeo\\Database\\Factories\\": "database/factories/"
+            "Captenmasin\\InertiaSeo\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Captenmasin\\InertiaSeo\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "Captenmasin\\InertiaSeo\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -48,7 +48,6 @@
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
-            "@php vendor/bin/testbench workbench:build --ansi"
         ],
         "start": [
             "Composer\\Config::disableProcessTimeout",
