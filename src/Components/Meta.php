@@ -21,6 +21,6 @@ class Meta extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.meta');
+        return view('inertia-seo::components.meta');
     }
 }
