@@ -1,6 +1,5 @@
 <script setup>
 import {onMounted, ref} from 'vue'
-import {useTitle} from '@vueuse/core'
 import {Head, router, usePage} from '@inertiajs/vue3'
 
 const props = defineProps({
@@ -36,11 +35,16 @@ function formatTitle(title) {
     return title
 }
 
+function applyTitle(title) {
+    const newTitle = title ?? document?.title ?? null
+    document.title = formatTitle(newTitle)
+}
+
 function applyMeta(event = null) {
     meta.value = usePage().props[props.metaKey]
     key.value = event ? (event.timeStamp + event.detail.page.component) : new Date().toDateString()
 
-    useTitle(formatTitle(meta.value?.title))
+    applyTitle(meta.value?.title)
     document.querySelector('meta[name="description"]').setAttribute('content', meta.value?.description ?? '')
 }
 
