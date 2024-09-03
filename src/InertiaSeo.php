@@ -2,7 +2,4 @@
 
 namespace Captenmasin\InertiaSeo;
 
-class InertiaSeo
-{
-
-}
+class InertiaSeo {}

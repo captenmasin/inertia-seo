@@ -2,9 +2,9 @@
 
 namespace Captenmasin\InertiaSeo\Tests;
 
+use Captenmasin\InertiaSeo\InertiaSeoServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Captenmasin\InertiaSeo\InertiaSeoServiceProvider;
 
 class TestCase extends Orchestra
 {
