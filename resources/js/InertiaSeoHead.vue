@@ -36,7 +36,7 @@ function formatTitle(title) {
 }
 
 function applyTitle(title) {
-    const newTitle = title ?? document?.title ?? null
+    const newTitle = title ?? null
     document.title = formatTitle(newTitle)
 }
 
@@ -44,7 +44,8 @@ function applyMeta(event = null) {
     meta.value = usePage().props[props.metaKey]
     key.value = event ? (event.timeStamp + event.detail.page.component) : new Date().toDateString()
 
-    applyTitle(meta.value?.title)
+    const title = meta.value?.title ?? null
+    applyTitle(title)
     document.querySelector('meta[name="description"]').setAttribute('content', meta.value?.description ?? '')
 }
 
